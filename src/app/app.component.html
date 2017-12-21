@@ -2,3 +2,12 @@
   <h1>Dynamic Form Module</h1>
 </div>
 <app-dynamic-form [config] = "config" (formSubmit)="formSubmitted($event)"></app-dynamic-form>
+<div>
+  {{result | json}} 
+</div>
+
+<!-- <form [formGroup]="testForm" action="" (ngSubmit)="testFormSubmit(testForm.value)">
+  <input type="text" [formControl]="testForm.controls['user']">
+  <input type="text" [formControl]="testForm.controls['pass']">
+  <button class="btn btn-primary" type="submit" [disabled]="!testForm.valid">login</button>
+</form> -->

@@ -1,4 +1,4 @@
 <div class="form-group" [formGroup]="group">
-  <label >{{config.label}}</label>
-  <input type="text" class="form-control"  [formControlName]="config.name">
+  <label >{{config.label}} <span *ngIf="config.required == 'true'" class="text-danger">*</span></label>
+  <input type="text" class="form-control"  [formControlName]="config.name" placeholder="{{config.placeholder}}" >
 </div>

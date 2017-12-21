@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DynamicformDirective } from '../dynamicform.directive';
 
 
@@ -20,9 +20,12 @@ export class DynamicFormComponent implements OnInit {
 
   createGroup() {
     const group = this.fb.group({});
-    this.config.forEach(ctrl => group.addControl(ctrl.name, this.fb.control(null)));
+    this.config.forEach(ctrl => {
+      if (ctrl.type !== 'button') {
+        group.addControl(ctrl.name, this.fb.control(null));
+      }
+    });
     return group;
-
   }
 
 }

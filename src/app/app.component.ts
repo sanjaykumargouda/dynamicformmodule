@@ -10,6 +10,7 @@ import { DynamicFormComponent } from './dynamic-form/dynamic-form/dynamic-form.c
 export class AppComponent implements OnInit {
   title = 'app';
   // testForm: FormGroup;
+  private result: [{}];
   config: any[] = [
     {
       type: 'input',
@@ -45,7 +46,7 @@ export class AppComponent implements OnInit {
       name: 'submit',
       type: 'button'
     }
-  ]
+  ];
   constructor(/* private fb: FormBuilder */) {
   }
   ngOnInit() {
@@ -57,8 +58,9 @@ export class AppComponent implements OnInit {
   /* testFormSubmit(val) {
     console.log(val, 'test');
   }*/
-  
+
   formSubmitted(e) {
+    this.result = e;
     console.log(e);
   }
 }

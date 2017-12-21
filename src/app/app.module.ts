@@ -1,3 +1,4 @@
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -13,7 +14,9 @@ import { FormButtonComponent } from './dynamic-form/form-button/form-button.comp
   ],
   imports: [
     BrowserModule,
-    DynamicFormModule
+    DynamicFormModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [
     FormInputComponent,

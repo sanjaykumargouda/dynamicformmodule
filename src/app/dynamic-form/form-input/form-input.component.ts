@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, Validators, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-form-input',
@@ -13,6 +13,14 @@ export class FormInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // need to add custom validator based on config json
+    if (this.config.required === 'true') {
+      this.group.controls[this.config.name].setValidators([Validators.required]);
+    }
+  }
+
+  numberValidation() {
+    console.log(233);
   }
 
 }

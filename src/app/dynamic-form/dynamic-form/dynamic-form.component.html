@@ -1,3 +1,3 @@
-<form action="" [formGroup]="dmForm" (ngSubmit)="formSubmit.emit(dmForm.value)" >
+<form action="#" [formGroup]="dmForm" (ngSubmit)="formSubmit.emit(dmForm.value)" >
   <ng-container *ngFor="let field of config" [config]="field" [group]="dmForm" appDynamicform></ng-container>
 </form>
